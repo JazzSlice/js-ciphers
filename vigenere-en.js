@@ -4,7 +4,7 @@
 // - дополнить словарь символьными значениями
 
 var key = "оладушек";
-var msg = "ПростотЕкст"
+var msg = "ПростотЕкст";
 
 var vigenereEncryption = function (message, keyPhrase) {
     var alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
@@ -22,11 +22,10 @@ var vigenereEncryption = function (message, keyPhrase) {
         индекс символа после смещения = индекс символа исходного
         сообщения + индекс сивола ключа
         */
-        var charIndex = (alphabetMap[message[k]] + 
-            alphabetMap[keyPhrase[k % (keyPhrase.length)]]);
+        var charIndex = (alphabetMap[message[k]] + alphabetMap[keyPhrase[k % (keyPhrase.length)]]);
         encodedMsg += alphabet[charIndex];
     }
-    return encodedMsg
+    return encodedMsg;
 }
 
 console.log(vigenereEncryption(msg, key));
