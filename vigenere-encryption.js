@@ -9,7 +9,7 @@ var msg = "ПростотЕкст";
 var vigenereEncryption = function (message, keyPhrase) {
     var alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
-    // Определяем структуру алфавита {index: character} на основе массива с алфавитом
+    // Определяем структуру алфавита {character: index} на основе массива с алфавитом
     var alphabetMap = {};
     for (var j = 0; j < (alphabet.length - 1); j++) {
         alphabetMap[alphabet[j]] = j;
