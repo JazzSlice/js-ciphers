@@ -3,15 +3,15 @@
 // - реализовать функцию разсшифрования с известным ключем
 // - дополнить словарь символьными значениями
 
-var key = "оладушек";
-var msg = "ПростотЕкст";
+var key = "яЯяЯаАаА";
+var msg = "АааАаААаяЯЯяяЯЯя";
 
 var vigenereEncryption = function (message, keyPhrase) {
     var alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
 
-    // Определяем структуру алфавита {character: index} на основе массива с алфавитом
+    // Определяем структуру алфавита {index: character} на основе массива с алфавитом
     var alphabetMap = {};
-    for (var j = 0; j < (alphabet.length - 1); j++) {
+    for (var j = 0; j < (alphabet.length); j++) {
         alphabetMap[alphabet[j]] = j;
     }
 
@@ -23,7 +23,7 @@ var vigenereEncryption = function (message, keyPhrase) {
         сообщения + индекс сивола ключа
         */
         var charIndex = (alphabetMap[message[k]] + alphabetMap[keyPhrase[k % (keyPhrase.length)]]);
-        encodedMsg += alphabet[charIndex];
+        encodedMsg += alphabet[charIndex % alphabet.length];
     }
     return encodedMsg;
 }
