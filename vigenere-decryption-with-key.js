@@ -1,8 +1,14 @@
-var encMessage = "ж(ПРиВЕтпВЮвй:{Пл +г!ыс@гЁО";
+var encMessage = "WriUtрM'%=3OS;(3!al~e4Ps3А$G 2ТXLs[т1дзyхБшOTшАKWs}4rHUgKЖш^K-;R y Pn4KoZшУ3а1_ Ud(Jo~Ut^@-GRП$G~s_YeZг-хГЖ\"хРшо4muж YVuTРБж302YPstHn 4f -.ZO_-3Pn Ko 4=3А1U -?пNauZ_YLsвСХгж#8хж rVuUс}6Р";
 var key = "АааАаААаяЯЯяяЯЯя";
 
 var vigenereDecryption = function (message, keyPhrase) {
-    var alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ~!\'\"\\\|\/\{\}\[\]\:\;,.?@#$%^&*()-_=+";
+    // Определяем содержимое алфавита
+    var ruAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+    var enAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var symbols = " ~!'\"\\|/{}[]:;,.?@#$%^&*()-_=+";
+    var numbers = "1234567890";
+
+    var alphabet = ruAlphabet + enAlphabet + symbols + numbers;
 
     // Определяем структуру алфавита {index: character} на основе массива с алфавитом
     var alphabetMap = {};

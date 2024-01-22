@@ -1,8 +1,14 @@
-var msg = "\"(Привет, + {мир} + !).@~\"\;";
+var msg = "print(f'Optimal value is {gaus_res[-1].y1} in {eps} range. Penalty in dot = {round(countPenal(gaus_res[-1].y1) * mu, roun)}. Assistant function in dot = {round(gaus_res[-1].fy1, roun)}')";
 var key = "АааАаААаяЯЯяяЯЯя";
 
 var vigenereEncryption = function (message, keyPhrase) {
-    var alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ ~!\'\"\\\|\/\{\}\[\]\:\;,.?@#$%^&*()-_=+";
+    // Определяем содержимое алфавита
+    var ruAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+    var enAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var symbols = " ~!'\"\\|/{}[]:;,.?@#$%^&*()-_=+";
+    var numbers = "1234567890";
+
+    var alphabet = ruAlphabet + enAlphabet + symbols + numbers;
 
     // Определяем структуру алфавита {index: character} на основе массива с алфавитом
     var alphabetMap = {};
